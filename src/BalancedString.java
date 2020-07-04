@@ -5,7 +5,7 @@ public class BalancedString {
         /*A String is balanced String if every opening bracket ( "({[" ) of the string is closed properly in sequence
         example of balanced string (({[]})), (){}[]
         example of unbalanced strings ({[)]} closing sequence is not proper*/
-        System.out.println(isBalancedString("[]"));
+        System.out.println(isBalancedString("{[]}}"));
 
     }
     private static boolean isBalancedString(String str){
@@ -14,14 +14,17 @@ public class BalancedString {
             System.out.println("i is "+ i);
             if(str.charAt(i)=='(' || str.charAt(i)=='{' || str.charAt(i)=='[' )
                 stack.push(str.charAt(i));
-            else if((str.charAt(i)== ')') && stack.peek() =='('){
+            else if((str.charAt(i)== ')')  && (!stack.isEmpty()) && stack.peek() =='('){
                 stack.pop();
             }
-            else if((str.charAt(i)== '}') && stack.peek() =='{'){
+            else if((str.charAt(i)== '}')  && (!stack.isEmpty()) && stack.peek() =='{'){
                 stack.pop();
             }
-            else if((str.charAt(i)== ']') && stack.peek() =='['){
+            else if((str.charAt(i)== ']')  && (!stack.isEmpty()) && stack.peek() =='['){
                 stack.pop();
+            }
+            else{
+                return false;
             }
         }
        return stack.isEmpty();
