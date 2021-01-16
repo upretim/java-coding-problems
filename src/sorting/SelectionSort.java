@@ -7,6 +7,7 @@ public class SelectionSort {
         System.out.println("This is implementation of Selection Sort in Java");
         int [] array={1,2,3,2,6,3,9,1,34,0,-1};
         selectionSort(array);
+        System.out.println(Arrays.toString(array));
     }
 
     private static int[] selectionSort(int[] arr){
@@ -23,7 +24,6 @@ public class SelectionSort {
               arr[least]=temp;
           }
         }
-        System.out.println(Arrays.toString(arr));
         return arr;
     }
 }

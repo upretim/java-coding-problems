@@ -7,6 +7,7 @@ public class BubbleSort {
         System.out.println("This is implementation of bubble sort in Java");
         int [] array={1,2,3,2,6,3,9,1,34,0,-1};
         bubbleSort(array);
+        System.out.println(Arrays.toString(array));
     }
     private static int[] bubbleSort(int[] arr){
         for(int i=0;i<arr.length;i++){
@@ -18,7 +19,6 @@ public class BubbleSort {
                 }
             }
         }
-        System.out.println(Arrays.toString(arr));
         return arr;
     }
 }
