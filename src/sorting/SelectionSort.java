@@ -6,8 +6,9 @@ public class SelectionSort {
     public static void main(String args[]){
         System.out.println("This is implementation of Selection Sort in Java");
         int [] array={1,2,3,2,6,3,9,1,34,0,-1};
-        selectionSort(array);
-        System.out.println(Arrays.toString(array));
+        int [] array1 ={4, 3, 1, 2};//3
+        selectionSort(array1);
+        System.out.println(Arrays.toString(array1));
     }
 
     private static int[] selectionSort(int[] arr){

@@ -15,8 +15,19 @@ public class IntegerPalindrome {
         System.out.println(isNumberPalindrome(12321));
     }
     private static boolean isNumberPalindrome(int a){
-       List<Integer> arr = new ArrayList<>();
-       int digit;
+
+       String s = String.valueOf(a);
+       int start =0;
+       int end = s.length()-1;
+       while(start<end){
+           if(s.charAt(start)!=s.charAt(end)) return false;
+           end--;
+           start++;
+       }
+       return true;
+      /*   commented part is another way to solve the puzzle without making it a string.
+      List<Integer> arr = new ArrayList<>();
+      int digit;
        if (a<10) return true;
        while(a>0){
            digit = a%10;
@@ -26,13 +37,16 @@ public class IntegerPalindrome {
        int limit = arr.size()/2;
        int j = arr.size() -1;
       for(int i=0;i<limit;i++){
-          if(arr.get(i)==arr.get(j)){
-              j--;
-              continue;
+          if(arr.get(i)!=arr.get(j)){
+              return false;
           }
-          return false;
+          j--;
       }
         return true;
+        */
+
     }
+
+
 }
 
