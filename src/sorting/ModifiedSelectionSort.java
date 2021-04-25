@@ -8,8 +8,10 @@ package sorting;
 import java.util.Arrays;
 
 public class ModifiedSelectionSort {
-      public static void main(String [] args) {
-      int [] array ={1,2,4,90,1,-8,4,1,9,11,0,100};
+      public static void main(String [] args) { //3,1,2
+          int [] array ={4, 3, 1, 2};//3
+          int [] array1 ={2, 3, 4, 1, 5};//3
+          int [] array2 ={1, 3, 5, 2, 4, 6, 7};//3
           modifiedSelectionSort(array);
           System.out.println(Arrays.toString(array));
       };
@@ -37,11 +39,11 @@ public class ModifiedSelectionSort {
                arr[lowest] = arr[i];
                arr[i]=temp;
            }
-           if(highest!=k){
+          /* if(highest!=k){
                int temp = arr[highest];
                arr[highest] = arr[h];
                arr[h]=temp;
-           }
+           }*/
         //   if(highest==i && lowest==k)
            h--;
            i++;
