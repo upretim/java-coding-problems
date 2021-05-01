@@ -20,19 +20,19 @@ public class KnapsackZeroOne {
         int capacity = 15;
         int numberOfItems = values.length;
         HashMap<String,Integer> map = new HashMap<String,Integer>();
-        System.out.println(maxProfit(weights,values,capacity,numberOfItems,map));
+        System.out.println(maxProfitRecursive(weights,values,capacity,numberOfItems,map));
     }
-    private static int maxProfit(int[] w, int[] v, int capacity, int numberOfItems, HashMap<String, Integer> map){
+    private static int maxProfitRecursive(int[] w, int[] v, int capacity, int numberOfItems, HashMap<String, Integer> map){
         String Key = capacity+ "__"+ numberOfItems;
         if(map.containsKey(Key)) return map.get(Key);
        if(numberOfItems ==0 || capacity==0) return 0;
         if(w[numberOfItems-1]<=capacity){
-            int ifItemIncluded = maxProfit(w,v, capacity-w[numberOfItems-1],numberOfItems-1,map) + v[numberOfItems-1];
-            int ifItemExcluded = maxProfit(w,v, capacity,numberOfItems-1,map);
+            int ifItemIncluded = maxProfitRecursive(w,v, capacity-w[numberOfItems-1],numberOfItems-1,map) + v[numberOfItems-1];
+            int ifItemExcluded = maxProfitRecursive(w,v, capacity,numberOfItems-1,map);
             return Math.max(ifItemIncluded,ifItemExcluded);
         }
         else {
-            int ifItemExcluded = maxProfit(w,v, capacity,numberOfItems-1,map);
+            int ifItemExcluded = maxProfitRecursive(w,v, capacity,numberOfItems-1,map);
             return ifItemExcluded;
         }
     }
