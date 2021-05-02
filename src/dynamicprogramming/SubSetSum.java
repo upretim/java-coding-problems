@@ -24,16 +24,24 @@ public class SubSetSum {
         if(arr[index-1]>target) return isThere(arr,index-1,target);
         else return (isThere(arr, index-1,target-arr[index-1])) || (isThere(arr,index-1,target));
     }
-    //isThereII not working as it should
+
     public static boolean isThereII(int []arr, int index,int target){
         if(target==0) return true;
         if(index==0) return false;
+        if(arr[index-1]>target){
+            if(isThereII(arr,index-1,target)==true) return true;
+        }
+        else  {
+            if((isThereII(arr, index-1,target-arr[index-1])==true) || (isThereII(arr,index-1,target))==true) return true;
+        }
+
+      /*
         if(target>arr[index-1]){
             if((isThereII(arr, index-1,target-arr[index-1])==true) || (isThereII(arr,index-1,target))==true) return true;
         }
         else  {
             if(isThereII(arr,index-1,target)==true) return true;
-        }
+        }*/
         return false;
     }
 
