@@ -15,10 +15,12 @@ public class SubSetWithKItems {
            String str = Integer.toBinaryString(i);
            if(str.length()<k) continue;
             if(getNumberOfOnes(str,k)){
+                if(str.length()<arr.length){
+                    str = "0".repeat(arr.length-str.length())+str;
+                }
                 int[] set =new int[k];
                 int counter =0;
                 for(int ind =0;ind<str.length();ind++){
-                    System.out.println(str);
                     if(str.charAt(ind)=='1'){
                          set[counter] = arr[ind];
                          counter++;
