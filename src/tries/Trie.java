@@ -47,6 +47,9 @@ public class Trie {
         Trie trie = new Trie();
         trie.insert("hello");
         System.out.println(trie.search("hello"));
+        System.out.println(trie.search("hell"));
+        trie.insert("hell");
+        System.out.println(trie.search("hell"));
     }
 
 
