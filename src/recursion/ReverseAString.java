@@ -5,7 +5,8 @@ public class ReverseAString {
         System.out.println(reverseString("abc"));
     }
     private static String reverseString(String str){
-        if(str.length()==0) return "";
-        return reverseString(str.substring(1));
+        if(str.length()==1) return str;
+         return  reverseString(str.substring(1)) +str.substring(1);
+       // return result + reverseString(str.substring(1));
     }
 }

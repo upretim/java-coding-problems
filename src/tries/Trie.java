@@ -51,6 +51,4 @@ public class Trie {
         trie.insert("hell");
         System.out.println(trie.search("hell"));
     }
-
-
 };

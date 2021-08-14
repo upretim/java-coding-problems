@@ -9,9 +9,7 @@ public class BinaryTreeLevelOrderTraversal {
     public static void main(String[] args) {
 
     }
-    /*
-     * Definition for a binary tree node.
-      */
+    /** Definition for a binary tree node.*/
       public class TreeNode {
           int val;
           TreeNode left;
@@ -39,14 +37,15 @@ public class BinaryTreeLevelOrderTraversal {
             if(node.isEmpty()) break;
             List<TreeNode> nextNode =  new ArrayList<>();
             List<Integer> levelList = new ArrayList<>();
-             for(TreeNode n: node){
-                 levelList.add(n.val);
-                 if(n.left!=null) nextNode.add(n.left);
-                 if(n.right!=null) nextNode.add(n.right);
-             }
+            for(TreeNode n: node){
+                levelList.add(n.val);
+                if(n.left!=null) nextNode.add(n.left);
+                if(n.right!=null) nextNode.add(n.right);
+            }
             masterList.add(levelList);
             queue.add(nextNode);
         }
+
         return masterList;
     }
 }

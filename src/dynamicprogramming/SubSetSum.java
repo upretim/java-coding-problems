@@ -34,14 +34,6 @@ public class SubSetSum {
         else  {
             if((isThereII(arr, index-1,target-arr[index-1])==true) || (isThereII(arr,index-1,target))==true) return true;
         }
-
-      /*
-        if(target>arr[index-1]){
-            if((isThereII(arr, index-1,target-arr[index-1])==true) || (isThereII(arr,index-1,target))==true) return true;
-        }
-        else  {
-            if(isThereII(arr,index-1,target)==true) return true;
-        }*/
         return false;
     }
 

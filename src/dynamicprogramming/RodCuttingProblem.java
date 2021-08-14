@@ -18,5 +18,10 @@ public class RodCuttingProblem {
         }
         return maxProfit;
     }
+    private static int rodCuttingBottomUp(int lengthOfRod, int[] priceOfPieces){
+       int result =0;
+       return result;
+    }
+
 }
 
