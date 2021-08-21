@@ -4,7 +4,9 @@ public class SubarraySum {
     // https://leetcode.com/problems/subarray-sum-equals-k/
 
     public static void main(String[] args) {
-
+    int [] arr = {5,0,0,0};
+     int k =   3;
+        checkSubarraySum(arr,k);
     }
 
     public static int getSubarraySum(int[] nums, int k) {
@@ -19,5 +21,19 @@ public class SubarraySum {
             else map.put(runningSum, 1);
         }
       return ans;
+    }
+    //https://leetcode.com/problems/continuous-subarray-sum/
+    public static boolean checkSubarraySum(int[] nums, int k) {
+        if(nums.length<=1) return  false;
+        int runningTotal =0;
+        HashMap<Integer, Integer> map = new HashMap<>();
+        map.put(runningTotal, -1);
+        for(int num=0;num<nums.length;num++){
+            runningTotal = runningTotal+nums[num];
+            int res = runningTotal%k;
+            if(map.containsKey(res) && (num - map.get(res)>1)) return true;
+            if(!map.containsKey(res)) map.put(res,num);
+        }
+        return  false;
     }
 }
