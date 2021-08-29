@@ -19,8 +19,24 @@ public class RodCuttingProblem {
         return maxProfit;
     }
     private static int rodCuttingBottomUp(int lengthOfRod, int[] priceOfPieces){
-       int result =0;
-       return result;
+        int dp [] = new int[lengthOfRod+1];
+        int[] newPrices = new int[priceOfPieces.length+1];
+        for(int i=1;i< newPrices.length;i++){
+            newPrices[i]=priceOfPieces[i-1];
+        }
+        dp[0]=0;
+        dp[1]=newPrices[1];
+        for(int i=2;i<dp.length;i++){
+            dp[i]=newPrices[i];
+            int left = 1;
+            int right = i-1;
+            while(left<=right){
+               if(dp[left]+dp[right]>dp[i]) dp[i]= dp[left]+dp[right];
+               left++;
+               right--;
+            }
+        }
+        return dp[dp.length-1];
     }
 
 }
