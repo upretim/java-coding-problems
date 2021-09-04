@@ -3,7 +3,7 @@ package dynamicprogramming;
 import java.util.Arrays;
 
 //https://leetcode.com/problems/russian-doll-envelopes/
-public class RussainDoll {
+public class RussianDoll {
     public static  class Envelop implements  Comparable<Envelop>{
         int width;
         int height;
